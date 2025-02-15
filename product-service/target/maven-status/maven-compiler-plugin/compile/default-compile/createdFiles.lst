@@ -1,0 +1,11 @@
+com\ecommerce\product_service\domain\Product$ProductBuilder.class
+com\ecommerce\product_service\dto\ProductRequest$ProductRequestBuilder.class
+com\ecommerce\product_service\dto\ProductRequest.class
+com\ecommerce\product_service\dto\ProductResponse$ProductResponseBuilder.class
+com\ecommerce\product_service\service\ProductService.class
+com\ecommerce\product_service\repo\ProductRepository.class
+com\ecommerce\product_service\dto\ProductResponse.class
+com\ecommerce\product_service\ProductServiceApplication.class
+com\ecommerce\product_service\exception\GlobalExceptionHandler.class
+com\ecommerce\product_service\controller\ProductController.class
+com\ecommerce\product_service\domain\Product.class

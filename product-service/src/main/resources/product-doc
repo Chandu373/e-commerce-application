@@ -1,0 +1,6 @@
+------ API------
+1.create product (admin)
+2.edit (admin)
+3.delete product (admin)
+4.list all products (admin/user)
+5.get product (admin/user)
