@@ -1,0 +1,128 @@
+1.Get Product Stock
+📌 Endpoint: GET /inventory/{productId}
+📌 Description: Fetches available stock for a specific product.
+
+📌 Response:
+json
+{
+  "productId": "123",
+  "availableStock": 50,
+  "reservedStock": 10,
+  "status": "IN_STOCK"
+}
+
+2.Bulk Stock Check
+📌 Endpoint: POST /inventory/check-stock
+📌 Description: Checks stock availability for multiple products in one request.
+
+📌 Request:
+json
+{
+  "products": [
+    { "productId": "123", "quantity": 5 },
+    { "productId": "456", "quantity": 10 }
+  ]
+}
+📌 Response:
+{
+  "products": [
+    { "productId": "123", "available": true },
+    { "productId": "456", "available": false }
+  ]
+}
+
+3. Update Inventory (After Purchase or Restock)
+📌 Endpoint: PUT /inventory/update
+📌 Description: Updates inventory after an order is placed or stock is replenished.
+
+📌 Request:
+json
+{
+  "productId": "123",
+  "change": -5,  // -ve for order deduction, +ve for stock addition
+  "reason": "ORDER_PLACED"
+}
+
+📌 Response:
+json
+{
+  "productId": "123",
+  "availableStock": 45,
+  "status": "IN_STOCK"
+}
+
+4. Add New Product to Inventory
+📌 Endpoint: POST /inventory/add
+📌 Description: Adds a new product to the inventory system.
+
+📌 Request:
+json
+{
+  "productId": "789",
+  "initialStock": 100,
+  "reorderLevel": 10
+}
+📌 Response:
+
+json
+{
+  "message": "Product added successfully",
+  "productId": "789"
+}
+
+5. Reserve Stock for Order
+📌 Endpoint: POST /inventory/reserve
+📌 Description: Temporarily reserves stock for a customer’s order to avoid over-selling.
+
+📌 Request:
+json
+{
+  "orderId": "ORD123",
+  "items": [
+    { "productId": "123", "quantity": 2 },
+    { "productId": "456", "quantity": 1 }
+  ]
+}
+📌 Response:
+json
+{
+  "orderId": "ORD123",
+  "status": "RESERVED"
+}
+
+6. Release Reserved Stock (On Order Cancellation)
+📌 Endpoint: POST /inventory/release
+📌 Description: Releases reserved stock when an order is canceled.
+
+📌 Request:
+json
+{
+  "orderId": "ORD123"
+}
+
+📌 Response:
+json
+{
+  "message": "Stock released successfully",
+  "orderId": "ORD123"
+}
+
+7.Deduct Stock (On Successful Order Payment)
+📌 Endpoint: POST /inventory/deduct
+📌 Description: Deducts stock permanently after an order is confirmed and paid for.
+
+📌 Request:
+json
+{
+  "orderId": "ORD123",
+  "items": [
+    { "productId": "123", "quantity": 2 }
+  ]
+}
+
+📌 Response:
+json
+{
+  "message": "Stock deducted successfully",
+  "orderId": "ORD123"
+}

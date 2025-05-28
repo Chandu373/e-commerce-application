@@ -17,6 +17,15 @@ public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private Long productId;
+    @Column(nullable = false)
     private double quantity;
+    @Column(nullable = false)
+    private int availableStock;
+    @Column(nullable = false)
+    private int reservedStock;
+    @Version
+    private int version;
+
 }

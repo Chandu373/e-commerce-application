@@ -1,0 +1,12 @@
+com\ecommerce\inventory\InventoryServiceApplication.class
+com\ecommerce\inventory\domain\Inventory.class
+com\ecommerce\inventory\dto\InventoryResponse.class
+com\ecommerce\inventory\dto\ProductResponse.class
+com\ecommerce\inventory\service\InventoryService.class
+com\ecommerce\inventory\dto\InventoryResponse$InventoryResponseBuilder.class
+com\ecommerce\inventory\dto\ErrorResponse$ErrorResponseBuilder.class
+com\ecommerce\inventory\repo\InventoryRepository.class
+com\ecommerce\inventory\controller\InventoryController.class
+com\ecommerce\inventory\dto\ErrorResponse.class
+com\ecommerce\inventory\domain\Inventory$InventoryBuilder.class
+com\ecommerce\inventory\dto\ProductResponse$ProductResponseBuilder.class

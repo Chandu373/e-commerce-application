@@ -10,6 +10,7 @@
         <module name="product-service" />
         <module name="auth-service" />
         <module name="inventory-service" />
+        <module name="eureka-server" />
       </profile>
     </annotationProcessing>
   </component>

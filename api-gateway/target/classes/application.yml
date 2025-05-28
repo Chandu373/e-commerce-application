@@ -4,8 +4,7 @@ spring:
   application:
     name: API-GATEWAY
 
-
-# eureka config
+# eureka config to register with eureka server
 eureka:
   client:
     service-url:

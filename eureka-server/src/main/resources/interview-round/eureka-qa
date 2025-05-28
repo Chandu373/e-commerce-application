@@ -1,0 +1,63 @@
+ Eureka Server Interview Questions (with Key Concepts)
+1. What is Eureka Server?
+Explain that Eureka is a service registry where microservices register themselves and discover other services.
+
+2. What is the role of Eureka in a microservices architecture?
+Acts as a central registry to enable service discovery, allowing decoupled communication between services.
+
+3. What dependencies are needed to set up Eureka Server in a Spring Boot project?
+You need:
+
+xml
+Copy
+Edit
+<dependency>
+  <groupId>org.springframework.cloud</groupId>
+  <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+</dependency>
+4. How do you enable a Spring Boot application to become a Eureka Server?
+Add @EnableEurekaServer to your main class.
+
+5. What does register-with-eureka: false mean?
+It tells the Eureka Server not to register itself with another Eureka (i.e., standalone mode).
+
+6. What does fetch-registry: false mean?
+Prevents the Eureka Server from trying to fetch service registry information from other Eureka servers.
+
+7. What happens when a Eureka client registers?
+It sends a heartbeat at regular intervals.
+
+Eureka Server maintains an in-memory registry of all available clients.
+
+8. What is the default port for Eureka Server? Can it be changed?
+Default port is usually 8761, but it can be changed via application.yml.
+
+9. What is the purpose of service-url.defaultZone?
+Specifies the Eureka Server URL that clients should use to register:
+
+yaml
+Copy
+Edit
+defaultZone: http://localhost:8761/eureka/
+10. Can a Eureka Server be part of a cluster?
+Yes, multiple Eureka Servers can replicate their registries with each other for high availability.
+
+11. What is the difference between a Eureka Server and Eureka Client?
+Eureka Server	Eureka Client
+Hosts the registry	Registers itself
+Accepts heartbeats	Sends heartbeats
+Provides registry data	Consumes registry data
+
+12. What is a self-preservation mode in Eureka?
+A safety mechanism to avoid removing instances from the registry during network failures.
+
+13. How can you monitor the Eureka dashboard?
+By accessing the browser at http://localhost:8761
+
+You can see all registered applications and their instances.
+
+14. How does Eureka detect if a service is down?
+Through heartbeat timeouts and lease expirations.
+
+15. What would happen if two Eureka Servers are configured incorrectly and try to register each other?
+You could enter a circular dependency loop, which should be avoided by using correct flags (register-with-eureka: false).

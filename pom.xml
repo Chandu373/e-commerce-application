@@ -13,6 +13,7 @@
         <module>auth-service</module>
         <module>product-service</module>
         <module>inventory-service</module>
+        <module>eureka-server</module>
     </modules>
     <packaging>pom</packaging>
     <name>E-commerce</name>
